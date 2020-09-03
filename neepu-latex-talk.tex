@@ -2,187 +2,7 @@
 % Author: Jizheng Li
 
 \documentclass[UTF8,11pt]{beamer}
-\usepackage{ctex}
-
-\usepackage{bxtexlogo}  
-\usepackage{tipa}  		
-\usepackage{ccicons}  
-
-%% ================ 颜色 ===================
-%\definecolor{neepugreen}{rgb}{0,0.6,0}
-\definecolor{neepugreen}{rgb}{0.2,0.6,0.2}
-\setbeamercolor{section in toc}{fg=black}    
-%\setbeamercolor{section in toc}{bg=green}	 
-%\setbeamercolor{title}{bg=black!5!white, fg=neepugreen}
-\setbeamercolor{titlepageheader}{bg=red,fg=red}
-\setbeamercolor{titlepagefooter}{bg=red,fg=black}
-\setbeamercolor{block title}{fg=white,bg=neepugreen}	 
-\setbeamercolor{block body}{fg=black,bg=neepugreen!10!white}
-
-%% ================ 主题 ===================
-\mode<presentation>
-{
-	%\useoutertheme[subsection=false]{miniframes}
-	% \usetheme{PaloAlto}
-    \usetheme{AnnArbor}
-	%\usetheme{Berkeley}
-	% \usetheme{Darmstadt}
-	% \usetheme{Boadilla}
-	\usecolortheme{spruce}
-	\usecolortheme[named=neepugreen]{structure}
-	%\usecolortheme{orchid}
-	%\usecolortheme{whale}
-
-	% \usecolortheme{default}
-	% \usecolortheme{wolverine}
-	% \usecolortheme{crane}
-	% \usecolortheme{rose}
-	\setbeamercovered{transparent}
-}
-
-
-%\pgfdeclareimage[height=1.5cm]{university-logo}{cumtb}
-%\logo{\pgfuseimage{university-logo}}
-
-%% ================ 字体 ===================
-\usefonttheme{professionalfonts}  
-\usepackage{fontspec}
-%\setsansfont{Microsoft YaHei}
-%\setCJKmainfont{Microsoft YaHei}
-%\setCJKmonofont{KaiTi}
-%\setCJKsansfont{Microsoft YaHei}
-
-%% ================ 字号 ===================
-%\setbeamerfont{frametitle}{size=\large,series=\bfseries}
-%\setbeamerfont{title}{size=\Large,series=\bfseries}
-\setbeamerfont{title}{size=\huge,}
-%\setbeamerfont{subtitle}{size=\footnotesize,series=\bfseries}
-%\setbeamerfont{author}{size=\normalsize}
-%\setbeamerfont{date}{size=\scriptsize}
-
-%\setbeamerfont{block title}{size=\normalsize}
-%\setbeamerfont{structure}{size=\normalsize,series=\bfseries}
-
-\usepackage{tikz}
-\usepackage{url}
-\usepackage[bookmarksopen=true]{hyperref}
-\usepackage{graphicx}
-\usepackage{subfigure} 
-\usepackage{mathrsfs}  % 花体
-
-
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{bm}
-\usepackage{array}
-%\usepackage{unicode-math}
-
-\usepackage{booktabs}
-
-\usepackage{cases}    
-\usepackage{multirow}
-\usepackage{colortbl} 
-\usepackage{enumerate}
-\usepackage{algorithm}
-\usepackage{algorithmic}
-\usepackage{xcolor}
-%\usepackage{capt-of}
-\setcounter{tocdepth}{1}
-
-
-\usepackage{listings}
-\lstset{
-	language=[LaTeX]TeX,   % 使用latex语言
-	tabsize=4, 
-	keepspaces=true,
-	xleftmargin=2em,
-	xrightmargin=0em, 
-	aboveskip=1em,
-	%backgroundcolor=\color{gray!20},  % 定义背景颜色
-	frame=none,                        % 表示不要边框
-	extendedchars=false,               % 解决代码跨页时，章节标题，页眉等汉字不显示的问题
-	numberstyle=\ttfamily,
-	basicstyle=\ttfamily,
-	keywordstyle=\color[RGB]{40,40,255},% 关键词高亮
-	breakindent=10pt,
-	identifierstyle=,                  % nothing happens
-	commentstyle=\color{red}\small,    % 注释yanse 
-	morecomment=[l][\color{green}]{\#},
-	%numbers=left,
-	%stepnumber=1,
-	%numberstyle=\scriptsize,
-	showstringspaces=false,
-	showspaces=false,  %显示空格
-	flexiblecolumns=true,
-	breaklines=true, breakautoindent=true,breakindent=4em,
-	escapeinside={/*@}{@*/},
-	%escapeinside={\%*}{*)},
-	%caption=LaTeX example
-	morekeywords = {chapter,subsection,part,\{,\},includegraphics,onlinecite},
-}
-
-%\lstset{
-%	columns=fixed,       
-%	numbers=left,                                        % 在左侧显示行号
-%	numberstyle=\tiny\color{gray},                       % 设定行号格式
-%	frame=none,                                          % 不显示背景边框
-%	backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
-%	keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
-%	numberstyle=\footnotesize\color{darkgray},           
-%	commentstyle=\it\color[RGB]{0,96,96},                % 设置代码注释的格式
-%	stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
-%	showstringspaces=false,                              % 不显示字符串中的空格
-%}
-
-
-
-% 在每个部分的开头列出大纲
-\AtBeginSection[] % Do nothing for \subsection*
-{
-	\begin{frame}<beamer>
-		\frametitle{目录}
-		\tableofcontents[current,currentsection]
-	\end{frame}
-}
-
-\setcounter{tocdepth}{2} % 目录深度 显示section和subsection
-% Outline: default, sections numbered, subsections numbered, circle, square, ball, ball unnumbered
-\setbeamertemplate{sections/subsections in toc}[square]
-% Itemize items: default (triangle), circle, square, ball
-\setbeamertemplate{itemize items}[default]
-% Enumerate items: default, circle, square, ball
-\setbeamertemplate{enumerate items}[circle]
-
-
-% 在标题的前面添加图或表编号
-\setbeamertemplate{caption}[numbered]
-\setbeamertemplate{theorems}[numbered]
-
-% General blocks: 生成“圆角（rounded）”块 并且块有阴影
-\setbeamertemplate{blocks}[rounded][shadow=true]
-%\setbeamertemplate{blocks}[default]
-
-%% 背景设置   两种方法
-%\pgfdeclareimage 插图透明图片 取名叫bg 
-%\pgfdeclareimage[width=\paperwidth,height=0.95\paperheight]{bg}{figure/neepu_background.jpg}
-%\setbeamertemplate{background}{\pgfuseimage{bg}}
-
-\logo{\includegraphics[width=2cm,height=2cm]{figure/NEEPU.pdf}}
-
-%% 参考文献 上标
-\usepackage{cite}
-% \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
-% \newcommand{\upcite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}
-\makeatletter
-\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
-\makeatother
-
-\bibliographystyle{unsrt}
-
-\usepackage{calligra}
-\usepackage[T1]{fontenc}
-
+\usepackage{talkbeamer}
 
 
 \title[如何使用\LaTeX 排版]{\LaTeX 入门简介}
@@ -238,19 +58,31 @@
 	\begin{description}
 		\item[套装发行版] ：是\TeX 排版引擎、支持排版的文件（ 基本格式、 \LaTeX 宏包、字体等）以及一些辅助工具的集合。
 			\begin{itemize}
-				\item Mik\TeX、{\color{red}\TeX \,Live}、CTeX
+				\item {\color{red}\TeX \,Live}：TUG开发，跨平台，更新及时，值得信赖
+				\item {\color{red}Mik\TeX}：Windows专享，宏包安装方便，值得信赖
+				\item {\color{red}Mac\TeX}：虽然我买不起苹果电脑，但是仍然值得信赖
+				\item {\color{red}CTeX}：不推荐，但是想用还是可以用的，开心就好。
 			\end{itemize}
-		\item[编译器]：也称为排版引擎，是编译源代码并生成文档的程序。
-		\begin{itemize}
-			\item pdflatex、xelatex、lualatex
-		\end{itemize}
 		\item[编辑器] ：用什么东西写代码
 		\begin{itemize}
-			\item TeXworks、TeXstudio，WinEdt、TeXshop、Notepad++
+			\item 专用免费编辑器：TeXworks、TeXStudio、TeXmaker
+			\item 专用收费编辑器：WinEdt
+			\item 通用文本编辑器：Vim、VS Code、Sublime、Atom
+			\item 其他：Notepad
 		\end{itemize}	
 	\end{description}
 
-	\bfseries CTeX套装发行版和\CTeX 宏包/文档类是两回事
+	
+\end{frame}
+\begin{frame}{\TeX 编译引擎}
+	\begin{enumerate}
+		\item \TeX (latex)：tex->dvi->pdf (需要其他工具)
+		\item \pdfTeX (pdflatex)：tex->pdf (不支持Unicode，西文首选)
+		\item \LuaTeX (lualatex)：tex->pdf (支持Unicode，但不稳定)
+		\item \XeTeX (xelatex)：tex->xdv->pdf (支持Unicode，中文首选)
+		\item \BibTeX (bibtex)：输出参考文献
+	\end{enumerate}
+	\bfseries CTeX套装发行版和\CTeX 宏包/文档类是两回事，请使用\CTeX 宏包配合UTF-8编码进行中文排版！
 \end{frame}
 
 \subsection{和Word对比}
@@ -271,15 +103,40 @@
 			公式排版差强人意	  & 尤其擅长公式排版 \\
 			\rowcolor{gray!40}
 			各版本兼容性差		  & 易读，稳定 \\
-			商业付费			& 自由免费 \\
+			商业付费			& 开源免费 \\
 			\hline
 		\end{tabular}	
 	\end{center}
 \end{frame}
 
+\begin{frame}{不要陷入这三个坑}
+	\begin{enumerate}
+		\item 请远离CJK宏包与CTeX套装
+		\begin{itemize}
+			\item CJK是十年前处理中文的方式
+			\item CTeX套装已经多年未更新，功能较为冗余
+			\item 处理中文，优先使用\CTeX 宏包或xeCJK宏包
+		\end{itemize}
+		\item 不要按Word的思路来学习/使用\LaTeX
+		\begin{itemize}
+			\item 常见误区：强制换行、更换字体、图文混排
+			\item "怎样在\LaTeX 中实现Word中的xx功能"
+			\item 请逐渐习惯\LaTeX 的思维方式
+		\end{itemize}
+		\item 切勿花费过多精力于\LaTeX 的细枝末节上
+		\begin{itemize}
+			\item \TeX/\LaTeX 是进四十年前的发明，与现代程序设计原理有所冲突
+			\item 四十年来的层层累进，内容太多，不要指望能够马上学会
+			\item 文档的内容最重要
+			\item 使用\LaTeX 的最高境界：拍好内容且不浪费时间
+		\end{itemize}
+	\end{enumerate}
+	
+\end{frame}
 
 
-\subsection{\TeX 排版举例}\label{gonshiye}
+
+\subsection{\TeX 排版举例}\label{eq_example}
 \begin{frame}{\TeX 排版举例:数学公式}
 	\begin{block}{无编号公式}
 		$$ f(x)=f(x^{(0)})+f^{'}(x^{(0)})\Delta +\frac{1}{2}f^{''}(x^{(0)})(\Delta x)^2+\cdots$$
@@ -342,6 +199,11 @@
 	\end{columns}
 \end{frame}
 
+\begin{frame}{\TeX 排版举例：算法}
+\begin{figure}
+	\includegraphics[scale=0.4]{figure/Algorithm.png}
+\end{figure}
+\end{frame}
 
 \begin{frame}{\TeX 排版举例：文档}
 	\includegraphics[scale=0.25]{figure/bib}
@@ -369,23 +231,6 @@
 
 
 \section{排版}
-\subsection{模板的使用}
-\begin{frame}{排版}{模板的使用}
-	\begin{itemize}[<+->]
-		\item 模板
-		\begin{itemize}
-			\item[*] 已经设计好的格式框架
-			\item[*] 不应将时间花费在调整框架上
-		\end{itemize}
-		\item 哪里获取模板
-		\begin{itemize}
-			\item[*] 上网下载
-			\item[*] .cls文档类
-			\item[*] .sty宏包 
-		\end{itemize}
-	\end{itemize}
-\end{frame}
-
 
 \subsection{\LaTeX 排版入门}
 \begin{frame}[fragile]
@@ -396,11 +241,11 @@
 \usepackage{ctex}  % 中文支持宏包
 \title{一篇不太简短的\LaTeXe 简介}
 \author{Tobias Oetiker}
-\date{\doday}
+\date{\today}
 
 %% 正文区
 \begin{document} 
-\maketitle
+\maketitle % 自动生成标题页
 这里是正文
 \end{document} 
 \end{lstlisting}
@@ -520,9 +365,8 @@
 \pageref{label}
 \end{lstlisting}
 	\column{5cm}	
-从第\pageref{gonshiye} 页的公式 \ref{eq1} 中我们可以看出
+从第\pageref{eq_example} 页的公式 \ref{eq1} 中我们可以看出
 	\end{columns}
-	
 	\begin{columns}
 		\column{7cm}
 \begin{lstlisting}
@@ -537,7 +381,7 @@
 \begin{frame}[fragile]{交叉引用和脚注}
 	\begin{columns}
 		\column{7cm}
-		\begin{lstlisting}
+\begin{lstlisting}
 东电图标请参见图~\ref{fig:logo}
 \begin{figure}[htbp]
 \centering
@@ -573,6 +417,9 @@
 				\item bst参考文献样式
 			\end{itemize}
 		\end{itemize}
+\begin{lstlisting}
+在许多文献\cite{li2018two,li2018optimal}中
+\end{lstlisting}
 		如“在许多文献\cite{li2018two,li2018optimal}中”
 		\column{5cm}
 		{\zihao{-6}
@@ -616,14 +463,77 @@
 
 \begin{frame}[fragile]
 	\frametitle{数学公式}
-	\begin{lstlisting}
+\begin{lstlisting}
 在公式$V = \frac{4}{3}\pi r^2$中，有：
 $$\lim_{n \rightarrow \infty}(1+\frac{1}{n})^n=e \quad V = \frac{4}{3}\pi r^2$$
 这是一个极限n趋于无穷大的极限
 \end{lstlisting}
 
-在公式$V = \frac{4}{3}\pi r^2$中，有：$$\lim_{n \rightarrow \infty}(1+\frac{1}{n})^n=e \quad V = \frac{4}{3}\pi r^2$$这是一个极限n趋于无穷大的极限
+在公式$V = \frac{4}{3}\pi r^2$中，有：$$\lim_{n \rightarrow \infty}(1+\frac{1}{n})^n=e \quad V = \frac{4}{3}\pi r^2$$这是一个极限$n$趋于无穷大的极限
+\end{frame}
 
+\begin{frame}[fragile]
+\begin{lstlisting}
+$D$ and $G$ play the following two-player minimax game with value function $V (G; D)$:
+\begin{equation}
+\min_{G}\max_{D}V(G,D)=\mathbb{E}_{x\sim P_{data}}[\log D(x)]+\mathbb{E}_{z \sim P_{z}}[\log(1-D(G(z)))]
+\end{equation}
+\end{lstlisting}
+$D$ and $G$ play the following two-player minimax game with value function $V (G; D)$:
+\begin{equation}
+	\min _{G} \max _{D} V(G,D)=\mathbb{E}_{x \sim P_{data}}[\log D(x)]+\mathbb{E}_{z \sim P_{z}}[\log (1-D(G(z)))]
+\end{equation}
+\end{frame}
+
+
+\subsection{模板的使用}
+\begin{frame}{排版}{模板的使用}
+	\begin{itemize}[<+->]
+		\item 模板
+		\begin{itemize}
+			\item[*] 已经设计好的格式框架
+			\item[*] 不应将时间花费在调整框架上
+		\end{itemize}
+		\item 哪里获取模板
+		\begin{itemize}
+			\item[*] 上网下载
+			\item[*] .cls文档类
+			\item[*] .sty宏包 
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{IEEE \LaTeX Class}
+\footnotesize
+\begin{lstlisting}
+\title{Optimal Scheduling of an Isolated Microgrid With Battery Storage Considering Load and Renewable Generation Uncertainties}
+\author{Yang~Li,~\IEEEmembership{Member,~IEEE,}Zhen~Yang,Guoqing~Li,Dongbo~Zhao,~\IEEEmembership{Senior Member,~IEEE,} and Wei~Tian,~\IEEEmembership{Senior Member,~IEEE,}}
+\maketitle
+\end{lstlisting}
+\begin{figure}
+	\includegraphics[scale=0.3]{figure/title.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\scriptsize
+\begin{lstlisting}
+\begin{abstract}
+abstract abstract abstract abstract abstract abstract abstract abstract
+\end{abstract}
+\begin{IEEEkeywords}
+deep learning, microgird
+\end{IEEEkeywords}
+\section{INTRODUCTION}
+\subsection{Literature Review}
+\subsection{Contribution of This Paper}
+\subsection{Organization of This Paper}
+\section{UNCERTAINTY MODELING OF MICROGRIDS}
+\subsection{Probabilistic WT Model}
+\end{lstlisting}
+\begin{figure}
+	\includegraphics[scale=0.3]{figure/IEEE.png}
+\end{figure}
 \end{frame}
 
 
@@ -641,6 +551,8 @@ $$\lim_{n \rightarrow \infty}(1+\frac{1}{n})^n=e \quad V = \frac{4}{3}\pi r^2$$
 \end{frame}
 
 
+
+
 \subsection{\LaTeX 网站}
 \begin{frame}{\LaTeX 网站}
 	\begin{columns}
@@ -648,8 +560,7 @@ $$\lim_{n \rightarrow \infty}(1+\frac{1}{n})^n=e \quad V = \frac{4}{3}\pi r^2$$
 	\begin{itemize}
 	\item \href{https://www.overleaf.com}{Overleaf}
 	\item \href{https://www.ctan.org/}{CTAN}
-	\item \href{https://www.latexstudio.net/}{\LaTeX 开源小屋}
-	\item \href{https://www.latexstudio.net/hulatex/index.htm}{\LaTeX 编辑部}
+	\item \href{https://www.latexstudio.net/}{\LaTeX 工作室}
 	\end{itemize}
 	\column{5cm}
 \includegraphics[scale=0.5]{figure/TeX_logo}
@@ -663,7 +574,7 @@ $$\lim_{n \rightarrow \infty}(1+\frac{1}{n})^n=e \quad V = \frac{4}{3}\pi r^2$$
 
 
 \subsection{一点点经验分享}
-\begin{frame}{一点点经验分享}
+\begin{frame}{一点经验分享}
 	\begin{itemize}
 		\item \LaTeX 是排版系统，不是文字处理器
 		\item 所有文档都是过时的
@@ -691,10 +602,6 @@ $$\lim_{n \rightarrow \infty}(1+\frac{1}{n})^n=e \quad V = \frac{4}{3}\pi r^2$$
 			\item \url{https://github.com/Neiou8/neepu-latex-talk}
 		    \item 模板 \url{https://github.com/Neiou8/neepu-slides}
 		\end{itemize}
-		\item 个人博客
-			\begin{itemize}
-				\item \url{https://neiou8.github.io}
-			\end{itemize}
 		\item 本幻灯片基于：
 		\begin{itemize}
 			\item \url{https://github.com/tuna/thulib-latex-talk}
