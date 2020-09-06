@@ -1,7 +1,7 @@
 % Copyright (c) 2019 Jiazheng Li. All rights reserved.
 % Author: Jizheng Li
 
-\documentclass[UTF8,11pt]{beamer}
+\documentclass[UTF8,11pt]{ctexbeamer}
 \usepackage{talkbeamer}
 
 
@@ -30,7 +30,7 @@
 	\begin{columns}
 		\column{8cm}
 		\begin{enumerate}
-		\item \TeX \quad(/'t\textepsilon k/,/'t\textepsilon x/)
+		\item \TeX 
 		\begin{itemize}
 			\item 最初由Donald E. Knuth于 1978 年开发
 			\item 生成精美的图书排版系统
@@ -38,7 +38,7 @@
 			\item 尤其擅长数学公式的排版
 			\item 当前的版本号为 \TeX \; 3.14159265
 		\end{itemize}
-		\item \LaTeX \quad(/'leit\textepsilon k/)
+		\item \LaTeX 
 		\begin{itemize}
 			\item Leslie Lamport开发\LaTeX 降低使用门槛
 			% \item 每一个LaTeX 命令实际上最后都会被转换解释成几个甚至上百个TeX 命令。
@@ -109,35 +109,12 @@
 	\end{center}
 \end{frame}
 
-\begin{frame}{不要陷入这三个坑}
-	\begin{enumerate}
-		\item 请远离CJK宏包与CTeX套装
-		\begin{itemize}
-			\item CJK是十年前处理中文的方式
-			\item CTeX套装已经多年未更新，功能较为冗余
-			\item 处理中文，优先使用\CTeX 宏包或xeCJK宏包
-		\end{itemize}
-		\item 不要按Word的思路来学习/使用\LaTeX
-		\begin{itemize}
-			\item 常见误区：强制换行、更换字体、图文混排
-			\item "怎样在\LaTeX 中实现Word中的xx功能"
-			\item 请逐渐习惯\LaTeX 的思维方式
-		\end{itemize}
-		\item 切勿花费过多精力于\LaTeX 的细枝末节上
-		\begin{itemize}
-			\item \TeX/\LaTeX 是进四十年前的发明，与现代程序设计原理有所冲突
-			\item 四十年来的层层累进，内容太多，不要指望能够马上学会
-			\item 文档的内容最重要
-			\item 使用\LaTeX 的最高境界：拍好内容且不浪费时间
-		\end{itemize}
-	\end{enumerate}
-	
-\end{frame}
 
 
 
-\subsection{\TeX 排版举例}\label{eq_example}
-\begin{frame}{\TeX 排版举例:数学公式}
+
+\subsection{\LaTeX 排版举例}\label{eq_example}
+\begin{frame}{\LaTeX 排版举例:数学公式}
 	\begin{block}{无编号公式}
 		$$ f(x)=f(x^{(0)})+f^{'}(x^{(0)})\Delta +\frac{1}{2}f^{''}(x^{(0)})(\Delta x)^2+\cdots$$
 	\end{block}
@@ -157,7 +134,7 @@
 \end{frame}
 
 
-\begin{frame}{\TeX 排版举例:数学公式}
+\begin{frame}{\LaTeX 排版举例:数学公式}
 	\begin{block}{矩阵}
 		$$	A=\begin{bmatrix} \frac{\partial^2f }{\partial x_1^2} &\frac{\partial^2 f}{\partial x_1 \partial x_2} & \cdots & \frac{\partial^2f}{\partial x_1\partial x_n}\\ \frac{\partial^2f}{\partial x_2\partial x_1 } & \frac{\partial^2f}{\partial x_2^2}&\cdots &\frac{\partial^2f}{\partial x_2\partial x_n} \\\vdots&\vdots&\ddots & \vdots\\ \frac{\partial^2f}{\partial x_n\partial x_1}&\frac{\partial^2f}{\partial x_n \partial x_2}&\cdots&\frac{\partial^2f }{\partial x_n^2}  \end{bmatrix}$$		
 	\end{block}
@@ -169,7 +146,7 @@
 \end{frame}
 
 
-\begin{frame}{\TeX 排版举例:图形排版}
+\begin{frame}{\LaTeX 排版举例:图形排版}
 	\begin{columns}[c]  %开始进入分栏环境，居中设置
 		\column{7cm}
 	\begin{tikzpicture}
@@ -199,31 +176,31 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{\TeX 排版举例：算法}
+\begin{frame}{\LaTeX 排版举例：算法}
 \begin{figure}
 	\includegraphics[scale=0.4]{figure/Algorithm.png}
 \end{figure}
 \end{frame}
 
-\begin{frame}{\TeX 排版举例：文档}
+\begin{frame}{\LaTeX 排版举例：文档}
 	\includegraphics[scale=0.25]{figure/bib}
 	\includegraphics[scale=0.25]{figure/letter}
 \end{frame}
 
 
-\begin{frame}{\TeX 排版举例：文档}
+\begin{frame}{\LaTeX 排版举例：文档}
 	\centering
 	\includegraphics[width=5.5cm,height=8cm]{figure/poster}
 \end{frame}
 
 
-\begin{frame}{\TeX 排版举例：文档}
+\begin{frame}{\LaTeX 排版举例：文档}
 	\centering
 	\includegraphics[width=5.5cm,height=7.5cm]{figure/book}
 \end{frame}
 
 
-\begin{frame}{\TeX 排版举例：幻灯片}
+\begin{frame}{\LaTeX 排版举例：幻灯片}
 	\includegraphics[scale=0.45]{figure/examplebeamer1}
 	\includegraphics[scale=0.45]{figure/examplebeamer2}
 \end{frame}
@@ -479,7 +456,7 @@ $D$ and $G$ play the following two-player minimax game with value function $V (G
 \min_{G}\max_{D}V(G,D)=\mathbb{E}_{x\sim P_{data}}[\log D(x)]+\mathbb{E}_{z \sim P_{z}}[\log(1-D(G(z)))]
 \end{equation}
 \end{lstlisting}
-$D$ and $G$ play the following two-player minimax game with value function $V (G; D)$:
+$D$ and $G$ play the following two-player minimax game with value function $V (G, D)$:
 \begin{equation}
 	\min _{G} \max _{D} V(G,D)=\mathbb{E}_{x \sim P_{data}}[\log D(x)]+\mathbb{E}_{z \sim P_{z}}[\log (1-D(G(z)))]
 \end{equation}
@@ -541,10 +518,10 @@ deep learning, microgird
 \subsection{学习建议}
 \begin{frame}{阅读材料}
 	\begin{enumerate}
-	\item 略读包太雷《 \LaTeX \;Notes(第二版)》
 	\item 仔细阅读《 一份不太简短的 \LaTeXe 介绍》(lshort-zh)
 	\item 仔细阅读\CTeX 宏集手册
-	\item \LaTeX 入门（刘海洋）
+	\item 略读包太雷《 \LaTeX \;Notes(第二版)》
+	\item 《\LaTeX 入门》（刘海洋）
 	\item 根据所需宏包查阅宏包手册
 	\item texdoc 例如： texdoc lshort-zh
 	\end{enumerate}
@@ -561,6 +538,9 @@ deep learning, microgird
 	\item \href{https://www.overleaf.com}{Overleaf}
 	\item \href{https://www.ctan.org/}{CTAN}
 	\item \href{https://www.latexstudio.net/}{\LaTeX 工作室}
+	\item \href{https://www.tug.org/texlive/}{TeX Live}
+	\item \href{http://www.texstudio.org/}{TeX Studio}
+	\item \href{https://code.visualstudio.com/}{VS Code}
 	\end{itemize}
 	\column{5cm}
 \includegraphics[scale=0.5]{figure/TeX_logo}
@@ -574,21 +554,29 @@ deep learning, microgird
 
 
 \subsection{一点点经验分享}
-\begin{frame}{一点经验分享}
-	\begin{itemize}
-		\item \LaTeX 是排版系统，不是文字处理器
-		\item 所有文档都是过时的
-		\item 请不要使用 CTeX套装发行版，使用\CTeX 宏包
-		\item 如果要输入中文
+\begin{frame}{一点点经验分享}
+	\begin{enumerate}
+		\item 请远离CJK宏包与CTeX套装
 		\begin{itemize}
-			\item[*] 请用 XeLaTeX，请用 XeLaTeX，请用 XeLaTeX。
-			\item[*] UTF-8编码，UTF-8编码，UTF-8编码。
+			\item CJK是十年前处理中文的方式
+			\item CTeX套装已经多年未更新，功能较为冗余
+			\item 处理中文，优先使用\CTeX 宏包或xeCJK宏包
 		\end{itemize}
-		\item 写一点编译一次，提高容错
-		\item 用好百度，Google
-	\end{itemize}
+		\item 不要按Word的思路来学习/使用\LaTeX
+		\begin{itemize}
+			\item 常见误区：强制换行、更换字体、图文混排
+			\item \sout{"怎样在\LaTeX 中实现Word中的xx功能"}
+			\item 请逐渐习惯\LaTeX 的思维方式
+		\end{itemize}
+		\item 切勿花费过多精力于\LaTeX 的细枝末节上
+		\begin{itemize}
+			\item \TeX/\LaTeX 是进四十年前的发明，与现代程序设计原理有所冲突
+			\item 四十年来的层层累进，内容太多，不要指望能够马上学会
+			\item 文档的内容最重要
+			\item 写一点编译一次，提高容错；用好百度，Google
+		\end{itemize}
+	\end{enumerate}	
 \end{frame}
-
 
 \begin{frame}{参考文献}
 	\beamertemplatetextbibitems 

@@ -1,10 +1,10 @@
 \ProvidesPackage{talkbeamer}
-\usepackage{ctex}
+% \usepackage[UTF8, fontset=windowsnew, heading=true]{ctex}
 
 \usepackage{bxtexlogo}  
 \usepackage{tipa}  		
 \usepackage{ccicons}  
-
+\usepackage{ulem}
 
 %% ================ 颜色 ===================
 %\definecolor{neepugreen}{rgb}{0,0.6,0}
@@ -43,17 +43,17 @@
 %\logo{\pgfuseimage{university-logo}}
 
 %% ================ 字体 ===================
-\usefonttheme{professionalfonts}  
-\usepackage{fontspec}
-%\setsansfont{Microsoft YaHei}
-%\setCJKmainfont{Microsoft YaHei}
-%\setCJKmonofont{KaiTi}
-%\setCJKsansfont{Microsoft YaHei}
+% \usefonttheme{professionalfonts}  
+% \usepackage{fontspec}
+\usefonttheme[onlymath]{serif}
+\setsansfont{Times New Roman}
+\setCJKmainfont{Microsoft YaHei}
+\setCJKsansfont{微软雅黑}
 
 %% ================ 字号 ===================
 %\setbeamerfont{frametitle}{size=\large,series=\bfseries}
 %\setbeamerfont{title}{size=\Large,series=\bfseries}
-\setbeamerfont{title}{size=\huge,}
+\setbeamerfont{title}{size=\huge}
 %\setbeamerfont{subtitle}{size=\footnotesize,series=\bfseries}
 %\setbeamerfont{author}{size=\normalsize}
 %\setbeamerfont{date}{size=\scriptsize}
